@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+// MARK: - Protocol
+protocol LoginViewModelProtocol {
+    
+}
+
+// MARK: - Class
+class LoginViewModel {
+    
+}
+
+
+// MARK: - Extension
+
+extension LoginViewModel {
+    
+}
