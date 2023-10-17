@@ -44,6 +44,7 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         initView()
         observer()
+        
     }
     private func initView () {
         email.delegate = self
@@ -52,22 +53,23 @@ class LoginViewController: UIViewController{
     
     private func observer() {
         loginViewModel?.viewState = { [weak self] state in
-            switch state {
-            case .loading(_):
-                self?.loadingView.isHidden = true
-            
-            case .indicateErrorEmail(let error):
-                self?.emailError.text = error
-                self?.emailError.isHidden = false
-                
-            case .indicateErrorPassword(let error):
-                self?.passwordError.text = error
-                self?.passwordError.isHidden = false
-                
-            case .nextScreen:
-                self?.loadingView.isHidden = true
+            DispatchQueue.main.async{
+                switch state {
+                case .loading(_):
+                    self?.loadingView.isHidden = true
+                    
+                case .indicateErrorEmail(let error):
+                    self?.emailError.text = error
+                    self?.emailError.isHidden = false
+                    
+                case .indicateErrorPassword(let error):
+                    self?.passwordError.text = error
+                    self?.passwordError.isHidden = false
+                    
+                case .nextScreen:
+                    self?.loadingView.isHidden = false
+                }
             }
-          
         }
     }
     

@@ -10,40 +10,70 @@ import Foundation
 
 // MARK: - Class
 class LoginViewModel: LoginViewControllerDelegate {
-    var viewState: ((LoginView) -> Void)?
-                    
+    //MARK: - Dependencies
+    private let apiManager: ApiManagerProtocol
+    private let keychain: KeychainManagerProtocol
     
-   func loginActionButton(email: String?, password: String?) {
+    
+    var viewState: ((LoginView) -> Void)?
+    
+    //MARK: -Inits
+    init(apiManager: ApiManagerProtocol, keychain: KeychainManagerProtocol) {
+        self.apiManager = apiManager
+        self.keychain = keychain
         
-        guard validate(email: email) else {
-            self.viewState?(.indicateErrorEmail("Email Incorrecto"))
-            return
-        }
+    }
+    
+    
+    func loginActionButton(email: String?, password: String?) {
+        self.viewState?(.loading(true))
         
-        guard validate(password: password ) else {
-            self.viewState?(.indicateErrorPassword("Contraseña Erronea"))
-            return
-        }
-        
-        logInWith(
-            email: email ?? "",
-            password: password ?? "")
+        DispatchQueue.global().async{
+            guard self.validate(email: email) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.indicateErrorEmail("Email Incorrecto"))
+                return
+            }
+            
+            guard self.validate(password: password ) else {
+                self.viewState?(.loading(false))
+                self.viewState?(.indicateErrorPassword("Contraseña Erronea"))
+                return
+            }
+            
+            self.logInWith(
+                email: email ?? "",
+                password: password ?? "")
+            }
     }
     
     // MARK: - Private func
     private func validate(email: String?) -> Bool {
         email?.isEmpty == false && email?.contains("@") ?? false
-      }
+    }
     
     private func validate(password: String?) -> Bool {
         password?.isEmpty == false && (password?.count ?? 0) >= 6
     }
     
     private func logInWith (email: String, password: String) {
-        self.viewState?(.nextScreen)
-        
+        apiManager.login(user: email, password: password) { result in
+            switch result {
+            case .success(let token):
+                
+                self.keychain.save(token: token)
+                self.viewState?(.nextScreen)
+                
+            case .failure:
+                self.viewState?(.indicateErrorEmail("Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."))
+                }
+            }
+        }
     }
-}
+    
+    
+
+
 
 
 

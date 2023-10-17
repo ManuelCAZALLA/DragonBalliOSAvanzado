@@ -7,20 +7,21 @@
 
 import Foundation
 
+enum ApiError: Error {
+    case unknow
+    case encodingFailed
+    case noData
+    case malformedUrl
+    case decodingFailed
+}
 // MARK: - Protocol
-
+protocol ApiManagerProtocol {
+    func login(user: String,
+               password: String,
+               completion: @escaping (Result<String, ApiError>) -> Void)
+}
 // MARK: Class
-class ApiManager {
-    
-    enum ApiError: Error {
-        case unknow
-        case malformedUrl
-        case decodingFailed
-        case encodingFailed
-        case noData
-        case statusCode(code: Int?)
-        case noToken
-    }
+class ApiManager: ApiManagerProtocol {
     
     private enum ApiConfig {
         static let apiBaseURL = "https://dragonball.keepcoding.education/api"
@@ -55,6 +56,22 @@ class ApiManager {
                 completion(.failure(.unknow))
                 return
             }
+            
+            guard let data,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            guard let token = String(data: data, encoding: .utf8) else {
+                completion(.failure(.decodingFailed))
+                return
+                
+            }
+            print("Token recivido: \(token)")
+
+            completion(.success(token))
         }
+        task.resume()
     }
 }
