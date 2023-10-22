@@ -17,7 +17,7 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     var heroesCount: Int {
         heroes.count
     }
-   
+    
     private var heroes: Heroes = []
     // MARK: Inits
     init(apiManager: ApiManagerProtocol, keychainManager: KeychainManagerProtocol) {
@@ -32,22 +32,19 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         DispatchQueue.global().async {
             defer {self.viewState?(.loading(false))}
             guard let token = self.keychainManager.getToken() else { return}
-           
+            
             self.apiManager.getHeroes(by: nil,
-                  token: token) { result in
+                                      token: token) { result in
                 switch result{
-                
+                    
                 case .success(let heroes):
                     self.heroes = heroes
-                    print(heroes)
-                    self.viewState?(.updateData)
                    
                 case .failure(let error):
                     print("\(error)")
                 }
+                self.viewState?(.updateData)
                 
-               
-            
             }
         }
         
@@ -55,10 +52,10 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     
     func findHero(index: Int) -> Hero? {
         if index >= 0 && index < heroesCount { // Primero compruebo que existe
-                    heroes[index]
-                }else {
-                    nil
-                }
-            }
+            heroes[index]
+        }else {
+            nil
+        }
     }
+}
 

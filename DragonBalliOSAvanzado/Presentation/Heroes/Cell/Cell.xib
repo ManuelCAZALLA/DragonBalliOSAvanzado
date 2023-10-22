@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgq-3V-qB0">
-                        <rect key="frame" x="28" y="27" width="337" height="202"/>
+                        <rect key="frame" x="28" y="27" width="337" height="181"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ehw-1S-QTz">
-                                <rect key="frame" x="8" y="70" width="321" height="120"/>
+                                <rect key="frame" x="8" y="45" width="321" height="120"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZC-Ll-PLs">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -62,12 +62,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ehw-1S-QTz" firstAttribute="top" secondItem="Gbq-YW-Q8k" secondAttribute="bottom" constant="16" id="6uD-jZ-u0E"/>
                             <constraint firstItem="Gbq-YW-Q8k" firstAttribute="top" secondItem="cgq-3V-qB0" secondAttribute="top" constant="8" id="7rT-ir-CZu"/>
                             <constraint firstAttribute="trailing" secondItem="Gbq-YW-Q8k" secondAttribute="trailing" constant="8" id="MFr-A8-fN6"/>
                             <constraint firstItem="Gbq-YW-Q8k" firstAttribute="leading" secondItem="cgq-3V-qB0" secondAttribute="leading" constant="8" id="TAz-2g-OmM"/>
                             <constraint firstAttribute="trailing" secondItem="ehw-1S-QTz" secondAttribute="trailing" constant="8" id="dyB-iY-gEo"/>
+                            <constraint firstAttribute="bottom" secondItem="ehw-1S-QTz" secondAttribute="bottom" constant="16" id="kkf-WG-jWg"/>
                             <constraint firstAttribute="trailing" secondItem="ehw-1S-QTz" secondAttribute="trailing" constant="8" id="pSg-Jd-XlM"/>
-                            <constraint firstAttribute="bottom" secondItem="ehw-1S-QTz" secondAttribute="bottom" constant="12" id="prg-O0-748"/>
+                            <constraint firstAttribute="bottom" secondItem="ehw-1S-QTz" secondAttribute="bottom" constant="16" id="prg-O0-748"/>
                             <constraint firstItem="ehw-1S-QTz" firstAttribute="leading" secondItem="cgq-3V-qB0" secondAttribute="leading" constant="8" id="soK-Vf-qXQ"/>
                         </constraints>
                     </view>

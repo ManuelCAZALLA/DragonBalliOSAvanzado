@@ -15,7 +15,6 @@ class HeoreViewCell: UITableViewCell {
     // MARK: - IBOutlets
     
     @IBOutlet weak var descriptionHero: UILabel!
-    
     @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var loadingView: UIView!
@@ -31,7 +30,7 @@ class HeoreViewCell: UITableViewCell {
         super.awakeFromNib()
         
         loadingView.layer.cornerRadius = 8
-        loadingView.layer.shadowColor = UIColor.gray.cgColor
+        loadingView.layer.shadowColor = UIColor.blue.cgColor
         loadingView.layer.shadowOffset = .zero
         loadingView.layer.shadowRadius = 8
         loadingView.layer.shadowOpacity = 0.4
@@ -48,7 +47,7 @@ class HeoreViewCell: UITableViewCell {
         description: String? = nil)
     {
         self.nameHero.text = name
-        self.descriptionHero.text = name
+        self.descriptionHero.text = description
         self.imageHero.kf.setImage(with: URL(string: image ?? ""))
     }
 }

@@ -46,20 +46,30 @@ class LoginViewController: UIViewController{
         initView()
         observer()
     }
-        
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-               guard segue.identifier == "LoginToHero",
-                     let heroesViewController = segue.destination as? HeroesViewController else {
-                   return
-               }
-            
-            heroesViewController.heroesViewModel = loginViewModel?.heroesViewModel
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "LoginToHero",
+              let heroesViewController = segue.destination as? HeroesViewController else {
+            return
         }
         
+        heroesViewController.heroesViewModel = loginViewModel?.heroesViewModel
+    }
     
     private func initView () {
         email.delegate = self
         password.delegate = self
+        
+        view.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(dismisskeyboard)
+            )
+        )
+    }
+    
+    @objc func dismisskeyboard() { // esta funcion es para el selector
+        view.endEditing(true) // Oculta el teclado
     }
     
     private func observer() {
