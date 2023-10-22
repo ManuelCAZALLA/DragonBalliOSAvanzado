@@ -19,6 +19,9 @@ protocol ApiManagerProtocol {
     func login(user: String,
                password: String,
                completion: @escaping (Result<String, ApiError>) -> Void)
+    func getHeroes(by name: String?,
+                   token: String,
+                   completion: @escaping (Result<Heroes, ApiError>) -> Void)
 }
 // MARK: Class
 class ApiManager: ApiManagerProtocol {
@@ -28,11 +31,12 @@ class ApiManager: ApiManagerProtocol {
     }
     enum EndPoint {
         static let login = "/auth/login"
+        static let heroes = "/heros/all"
     }
     
     func login(user: String,
                password: String,
-               completion: @escaping (Result<String, ApiError>) -> Void) {
+               completion: @escaping (Result<String, ApiError>) -> Void){
         
         guard let url = URL(string: "\(ApiConfig.apiBaseURL)\(EndPoint.login)") else {
             completion(.failure(.malformedUrl))
@@ -68,10 +72,51 @@ class ApiManager: ApiManagerProtocol {
                 return
                 
             }
-            print("Token recivido: \(token)")
-
-            completion(.success(token))
+          completion(.success(token))
         }
         task.resume()
     }
+    
+    func getHeroes(by name: String?, token: String, completion: @escaping (Result<Heroes, ApiError>) -> Void) {
+        guard let url = URL(string: "\(ApiConfig.apiBaseURL)\(EndPoint.heroes)") else {
+            completion(.failure(.malformedUrl))
+            return
+        }
+        
+        let jsonData: [String: Any] = ["name": name ?? ""]
+        let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json; charset=utf-8",
+                            forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(token)",
+                            forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = jsonParameters
+
+       let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+               completion(.failure(.unknow))
+                return
+            }
+
+            guard let data,
+                  (response as? HTTPURLResponse)?.statusCode == 200 else {
+               completion(.failure(.noData))
+                return
+            }
+
+            guard let heroes = try? JSONDecoder().decode(Heroes.self, from: data) else {
+                completion(.failure(.decodingFailed))
+                return
+            }
+
+            print("API RESPONSE - GET HEROES: \(heroes)")
+            completion(.success(heroes))
+        }
+            task.resume()
+    }
 }
+    
+    
+

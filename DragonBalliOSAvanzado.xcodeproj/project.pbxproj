@@ -12,7 +12,7 @@
 		3CD1F4612AD697EF00C386D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4602AD697EF00C386D1 /* AppDelegate.swift */; };
 		3CD1F4632AD697EF00C386D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4622AD697EF00C386D1 /* SceneDelegate.swift */; };
 		3CD1F4652AD697EF00C386D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4642AD697EF00C386D1 /* LoginViewController.swift */; };
-		3CD1F4682AD697EF00C386D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1F4662AD697EF00C386D1 /* Main.storyboard */; };
+		3CD1F4682AD697EF00C386D1 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1F4662AD697EF00C386D1 /* Login.storyboard */; };
 		3CD1F46B2AD697EF00C386D1 /* DragonBalliOSAvanzado.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4692AD697EF00C386D1 /* DragonBalliOSAvanzado.xcdatamodeld */; };
 		3CD1F46D2AD697F000C386D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1F46C2AD697F000C386D1 /* Assets.xcassets */; };
 		3CD1F4702AD697F000C386D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CD1F46E2AD697F000C386D1 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,13 @@
 		3CD1F4872AD697F100C386D1 /* DragonBalliOSAvanzadoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4862AD697F100C386D1 /* DragonBalliOSAvanzadoUITestsLaunchTests.swift */; };
 		3CD1F49C2AD6B42200C386D1 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F49B2AD6B42200C386D1 /* LoginViewModel.swift */; };
 		3CD3AEE82ADE450A001F444A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3AEE72ADE450A001F444A /* ApiManager.swift */; };
+		3CFAED8A2AE2341B0075E15C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3CFAED892AE2341B0075E15C /* Kingfisher */; };
+		3CFAED8D2AE234670075E15C /* Heroes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFAED8C2AE234660075E15C /* Heroes.storyboard */; };
+		3CFAED8F2AE234A80075E15C /* HeroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED8E2AE234A80075E15C /* HeroesViewController.swift */; };
+		3CFAED912AE235070075E15C /* HeroesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED902AE235070075E15C /* HeroesViewModel.swift */; };
+		3CFAED962AE241E80075E15C /* HeoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED952AE241E80075E15C /* HeoreViewCell.swift */; };
+		3CFAED982AE249A80075E15C /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFAED972AE249A80075E15C /* Cell.xib */; };
+		3CFAED9C2AE2551C0075E15C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED9B2AE2551C0075E15C /* Hero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +53,7 @@
 		3CD1F4602AD697EF00C386D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CD1F4622AD697EF00C386D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3CD1F4642AD697EF00C386D1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		3CD1F4672AD697EF00C386D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3CD1F4672AD697EF00C386D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		3CD1F46A2AD697EF00C386D1 /* DragonBalliOSAvanzado.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DragonBalliOSAvanzado.xcdatamodel; sourceTree = "<group>"; };
 		3CD1F46C2AD697F000C386D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CD1F46F2AD697F000C386D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +65,12 @@
 		3CD1F4862AD697F100C386D1 /* DragonBalliOSAvanzadoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonBalliOSAvanzadoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3CD1F49B2AD6B42200C386D1 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3CD3AEE72ADE450A001F444A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		3CFAED8C2AE234660075E15C /* Heroes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Heroes.storyboard; sourceTree = "<group>"; };
+		3CFAED8E2AE234A80075E15C /* HeroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewController.swift; sourceTree = "<group>"; };
+		3CFAED902AE235070075E15C /* HeroesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModel.swift; sourceTree = "<group>"; };
+		3CFAED952AE241E80075E15C /* HeoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeoreViewCell.swift; sourceTree = "<group>"; };
+		3CFAED972AE249A80075E15C /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		3CFAED9B2AE2551C0075E15C /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFAED8A2AE2341B0075E15C /* Kingfisher in Frameworks */,
 				3C1BF5612ADD3F5F0039A6C3 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +103,7 @@
 		3C24D1762AD7F9B100C81D68 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3CD1F4662AD697EF00C386D1 /* Login.storyboard */,
 				3CD1F4642AD697EF00C386D1 /* LoginViewController.swift */,
 				3CD1F49B2AD6B42200C386D1 /* LoginViewModel.swift */,
 			);
@@ -99,7 +114,6 @@
 			isa = PBXGroup;
 			children = (
 				3CD1F45F2AD697EF00C386D1 /* DragonBalliOSAvanzado */,
-				3CD1F4662AD697EF00C386D1 /* Main.storyboard */,
 				3CD1F4792AD697F100C386D1 /* DragonBalliOSAvanzadoTests */,
 				3CD1F4832AD697F100C386D1 /* DragonBalliOSAvanzadoUITests */,
 				3CD1F45E2AD697EF00C386D1 /* Products */,
@@ -119,6 +133,7 @@
 		3CD1F45F2AD697EF00C386D1 /* DragonBalliOSAvanzado */ = {
 			isa = PBXGroup;
 			children = (
+				3CFAED992AE254FA0075E15C /* Domain */,
 				3CD1F4992AD6B3E200C386D1 /* Presentation */,
 				3CD1F4712AD697F000C386D1 /* Info.plist */,
 				3CD1F4982AD6B3C300C386D1 /* Resources */,
@@ -191,6 +206,7 @@
 		3CD1F4992AD6B3E200C386D1 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3CFAED8B2AE2343C0075E15C /* Heroes */,
 				3C24D1762AD7F9B100C81D68 /* Login */,
 				3CD1F49A2AD6B3FB00C386D1 /* Launch */,
 			);
@@ -203,6 +219,42 @@
 				3CD1F46E2AD697F000C386D1 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		3CFAED8B2AE2343C0075E15C /* Heroes */ = {
+			isa = PBXGroup;
+			children = (
+				3CFAED922AE2419B0075E15C /* Cell */,
+				3CFAED8C2AE234660075E15C /* Heroes.storyboard */,
+				3CFAED8E2AE234A80075E15C /* HeroesViewController.swift */,
+				3CFAED902AE235070075E15C /* HeroesViewModel.swift */,
+			);
+			path = Heroes;
+			sourceTree = "<group>";
+		};
+		3CFAED922AE2419B0075E15C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3CFAED952AE241E80075E15C /* HeoreViewCell.swift */,
+				3CFAED972AE249A80075E15C /* Cell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		3CFAED992AE254FA0075E15C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3CFAED9A2AE255070075E15C /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3CFAED9A2AE255070075E15C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3CFAED9B2AE2551C0075E15C /* Hero.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +275,7 @@
 			name = DragonBalliOSAvanzado;
 			packageProductDependencies = (
 				3C1BF5602ADD3F5F0039A6C3 /* KeychainSwift */,
+				3CFAED892AE2341B0075E15C /* Kingfisher */,
 			);
 			productName = DragonBalliOSAvanzado;
 			productReference = 3CD1F45D2AD697EF00C386D1 /* DragonBalliOSAvanzado.app */;
@@ -298,6 +351,7 @@
 			mainGroup = 3CD1F4542AD697EF00C386D1;
 			packageReferences = (
 				3C1BF55F2ADD3F5F0039A6C3 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				3CFAED882AE2341A0075E15C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 3CD1F45E2AD697EF00C386D1 /* Products */;
 			projectDirPath = "";
@@ -316,8 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CD1F4702AD697F000C386D1 /* LaunchScreen.storyboard in Resources */,
+				3CFAED982AE249A80075E15C /* Cell.xib in Resources */,
 				3CD1F46D2AD697F000C386D1 /* Assets.xcassets in Resources */,
-				3CD1F4682AD697EF00C386D1 /* Main.storyboard in Resources */,
+				3CD1F4682AD697EF00C386D1 /* Login.storyboard in Resources */,
+				3CFAED8D2AE234670075E15C /* Heroes.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +400,11 @@
 			files = (
 				3CD1F4652AD697EF00C386D1 /* LoginViewController.swift in Sources */,
 				3C1BF5642ADDA22D0039A6C3 /* keychainManager.swift in Sources */,
+				3CFAED8F2AE234A80075E15C /* HeroesViewController.swift in Sources */,
 				3CD1F4612AD697EF00C386D1 /* AppDelegate.swift in Sources */,
+				3CFAED962AE241E80075E15C /* HeoreViewCell.swift in Sources */,
+				3CFAED912AE235070075E15C /* HeroesViewModel.swift in Sources */,
+				3CFAED9C2AE2551C0075E15C /* Hero.swift in Sources */,
 				3CD3AEE82ADE450A001F444A /* ApiManager.swift in Sources */,
 				3CD1F4632AD697EF00C386D1 /* SceneDelegate.swift in Sources */,
 				3CD1F49C2AD6B42200C386D1 /* LoginViewModel.swift in Sources */,
@@ -385,12 +445,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3CD1F4662AD697EF00C386D1 /* Main.storyboard */ = {
+		3CD1F4662AD697EF00C386D1 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3CD1F4672AD697EF00C386D1 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		3CD1F46E2AD697F000C386D1 /* LaunchScreen.storyboard */ = {
@@ -535,7 +595,7 @@
 				INFOPLIST_FILE = DragonBalliOSAvanzado/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -563,7 +623,7 @@
 				INFOPLIST_FILE = DragonBalliOSAvanzado/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Login;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -705,6 +765,14 @@
 				minimumVersion = 20.0.0;
 			};
 		};
+		3CFAED882AE2341A0075E15C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -712,6 +780,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3C1BF55F2ADD3F5F0039A6C3 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		3CFAED892AE2341B0075E15C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CFAED882AE2341A0075E15C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

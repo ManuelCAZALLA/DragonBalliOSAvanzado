@@ -10,20 +10,19 @@ import Foundation
 
 // MARK: - Class
 class LoginViewModel: LoginViewControllerDelegate {
-    //MARK: - Dependencies
+    var viewState: ((LoginView) -> Void)?
+    var heroesViewModel: HeroesViewControllerDelegate {
+        HeroesViewModel(apiManager: apiManager, keychainManager: keychain)
+    }
+   //MARK: - Dependencies
     private let apiManager: ApiManagerProtocol
     private let keychain: KeychainManagerProtocol
     
-    
-    var viewState: ((LoginView) -> Void)?
-    
     //MARK: -Inits
-    init(apiManager: ApiManagerProtocol, keychain: KeychainManagerProtocol) {
+    init( apiManager: ApiManagerProtocol, keychain: KeychainManagerProtocol) {
         self.apiManager = apiManager
         self.keychain = keychain
-        
-    }
-    
+}
     
     func loginActionButton(email: String?, password: String?) {
         self.viewState?(.loading(true))

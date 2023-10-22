@@ -10,6 +10,7 @@ import UIKit
 // MARK: PROTOCOL
 protocol LoginViewControllerDelegate {
     var viewState: ((LoginView) -> Void)? { get set }
+    var heroesViewModel: HeroesViewControllerDelegate {get}
     func loginActionButton(email: String?, password: String?)
 }
 
@@ -44,8 +45,18 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         initView()
         observer()
-        
     }
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               guard segue.identifier == "LoginToHero",
+                     let heroesViewController = segue.destination as? HeroesViewController else {
+                   return
+               }
+            
+            heroesViewController.heroesViewModel = loginViewModel?.heroesViewModel
+        }
+        
+    
     private func initView () {
         email.delegate = self
         password.delegate = self
@@ -55,8 +66,8 @@ class LoginViewController: UIViewController{
         loginViewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async{
                 switch state {
-                case .loading(_):
-                    self?.loadingView.isHidden = true
+                case .loading(let isLoading):
+                    self?.loadingView.isHidden = !isLoading
                     
                 case .indicateErrorEmail(let error):
                     self?.emailError.text = error
@@ -67,7 +78,7 @@ class LoginViewController: UIViewController{
                     self?.passwordError.isHidden = false
                     
                 case .nextScreen:
-                    self?.loadingView.isHidden = false
+                    self?.performSegue(withIdentifier: "LoginToHero", sender: nil)
                 }
             }
         }
