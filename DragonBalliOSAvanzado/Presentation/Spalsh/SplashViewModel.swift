@@ -34,13 +34,17 @@ class SplashViewModel: SplashViewStateDelegate {
         self.keychain = keychain
     }
     
-     func sendToObserver() {
-       viewState?(.loading(true))
-       
-       DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) {
-           self.hasToken() ? self.viewState?(.toHeroes) : self.viewState?(.toLogin)
-               }
-           }
+    func sendToObserver() {
+        viewState?(.loading(true))
+        
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(3)) {
+            if self.hasToken() {
+                self.viewState?(.toHeroes)
+            }else {
+                self.viewState?(.toLogin)
+                
+            }
+        }
+        
+    }
 }
-
-

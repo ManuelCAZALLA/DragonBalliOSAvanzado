@@ -8,6 +8,11 @@
 import Foundation
 
 class HeroesViewModel: HeroesViewControllerDelegate {
+   
+    var loginViewModel: LoginViewControllerDelegate{
+        LoginViewModel(apiManager: apiManager, keychain: keychainManager)
+    }
+    
     // MARK: - Dependencies
     private let apiManager: ApiManagerProtocol
     private let keychainManager: KeychainManagerProtocol
@@ -19,13 +24,14 @@ class HeroesViewModel: HeroesViewControllerDelegate {
     }
     
     private var heroes: Heroes = []
+    
     // MARK: Inits
     init(apiManager: ApiManagerProtocol, keychainManager: KeychainManagerProtocol) {
         self.apiManager = apiManager
         self.keychainManager = keychainManager
         
     }
-    
+    // MARK: Public Function
     func sendToObserver() {
         viewState?(.loading(true))
         
@@ -57,5 +63,16 @@ class HeroesViewModel: HeroesViewControllerDelegate {
             nil
         }
     }
+    
+    func heroesDetailViewModel(index: Int) -> HeroesDetailViewControllerDelegate? {
+        guard let selecHero = findHero(index: index) else { return nil }
+        
+        return(HeroesDetailViewModel(
+            apiManager: apiManager,
+            keychain: keychainManager,
+            hero: selecHero))
+    }
+    
+
 }
 

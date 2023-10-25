@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,6 +21,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c82-0C-oaU">
+                                <rect key="frame" x="16" y="767.66666666666663" width="361" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Exit" cornerStyle="dynamic" titleAlignment="center"/>
+                                <connections>
+                                    <action selector="exitButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="oKC-C9-YMT"/>
+                                </connections>
+                            </button>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahT-Pk-Fh9">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
@@ -43,6 +52,9 @@
                             <constraint firstItem="ahT-Pk-Fh9" firstAttribute="top" secondItem="nsJ-oU-Ebg" secondAttribute="top" id="RRc-WN-ggX"/>
                             <constraint firstItem="ZNi-u2-wYl" firstAttribute="trailing" secondItem="nsJ-oU-Ebg" secondAttribute="trailing" id="dlF-Ni-uFA"/>
                             <constraint firstAttribute="bottom" secondItem="ZNi-u2-wYl" secondAttribute="bottom" id="eCq-gf-efk"/>
+                            <constraint firstItem="nsJ-oU-Ebg" firstAttribute="bottom" secondItem="c82-0C-oaU" secondAttribute="bottom" constant="16" id="kkg-h9-bmw"/>
+                            <constraint firstItem="c82-0C-oaU" firstAttribute="leading" secondItem="nsJ-oU-Ebg" secondAttribute="leading" constant="16" id="o97-w2-q2H"/>
+                            <constraint firstItem="nsJ-oU-Ebg" firstAttribute="trailing" secondItem="c82-0C-oaU" secondAttribute="trailing" constant="16" id="p3O-gv-gSK"/>
                             <constraint firstItem="ahT-Pk-Fh9" firstAttribute="trailing" secondItem="nsJ-oU-Ebg" secondAttribute="trailing" id="pes-S3-aH4"/>
                             <constraint firstItem="ahT-Pk-Fh9" firstAttribute="leading" secondItem="nsJ-oU-Ebg" secondAttribute="leading" id="s2F-Ed-JSV"/>
                             <constraint firstItem="ZNi-u2-wYl" firstAttribute="top" secondItem="M3U-Ns-H6P" secondAttribute="top" id="yVx-Jo-xeZ"/>
@@ -51,11 +63,33 @@
                     <connections>
                         <outlet property="loadingView" destination="ahT-Pk-Fh9" id="uHh-V4-XjP"/>
                         <outlet property="tableView" destination="ZNi-u2-wYl" id="wd1-nY-x26"/>
+                        <segue destination="xNp-0r-nfy" kind="show" identifier="Heroes_To_Detail" id="ayg-rt-qk5"/>
+                        <segue destination="p3h-dO-Wje" kind="show" identifier="Heroes_To_Login" id="9vk-To-HCY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="45.038167938931295" y="-2.1126760563380285"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Gph-0y-5cI">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Login" storyboardName="Login" id="p3h-dO-Wje" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="t9h-Oy-yYY"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uen-1i-SeR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="-216"/>
+        </scene>
+        <!--HeroesDetail-->
+        <scene sceneID="Hlg-YM-EJp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HeroesDetail" id="xNp-0r-nfy" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Q6w-rZ-7fq"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="muS-D7-xps" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="6"/>
         </scene>
     </scenes>
     <resources>

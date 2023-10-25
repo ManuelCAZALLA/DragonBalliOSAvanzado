@@ -11,9 +11,11 @@ import UIKit
 protocol HeroesViewControllerDelegate {
     var heroesCount: Int { get }
     var viewState: ((HeroesViewState) -> Void)? {get set}
+    var loginViewModel: LoginViewControllerDelegate { get }
     
     func sendToObserver()
     func findHero(index: Int) -> Hero?
+    func heroesDetailViewModel(index: Int) -> HeroesDetailViewControllerDelegate?
 }
 
 enum HeroesViewState {
@@ -22,40 +24,67 @@ enum HeroesViewState {
 }
 // MARK: - CLASS
 class HeroesViewController: UIViewController {
+    let keychain = KeychainManager()
+    
     // MARK: - IBOutlets
-   
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    // MARK: IBActions
+    @IBAction func exitButton(_ sender: Any) {
+        keychain.deleteToken()
+        
+        performSegue(withIdentifier: "Heroes_To_Login", sender: self)
+    }
+        
+        
+
+      
     // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
     
     // MARK: - Lifecicle
     override func viewDidLoad() {
         super.viewDidLoad()
+        observer()
         initView()
-        Observer()
         heroesViewModel?.sendToObserver()
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Heroes_To_Detail" {
+            if let index = sender as? Int,
+               let heroesDetailViewController = segue.destination as? HeroesDetailViewController,
+               let detailViewModel = heroesViewModel?.heroesDetailViewModel(index: index) {
+                heroesDetailViewController.heroesDetailViewModel = detailViewModel
+            }
+        } else if segue.identifier == "Heroes_To_Login" {
+            if let loginViewController = segue.destination as? LoginViewController {
+                loginViewController.loginViewModel = heroesViewModel?.loginViewModel
+            }
+        }
+    }
+
+    
     // MARK: - Private Func
     private func initView() {
         tableView.register(
-                    UINib(nibName: HeoreViewCell.identifier, bundle: nil),
-                    forCellReuseIdentifier: HeoreViewCell.identifier
+            UINib(nibName: HeoreViewCell.identifier, bundle: nil),
+            forCellReuseIdentifier: HeoreViewCell.identifier
         )
         
         tableView.dataSource = self
         tableView.delegate = self
     }
     
-    private func Observer() {
+    private func observer() {
         heroesViewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
                 switch state {
                 case .loading(let isLoading):
                     self?.loadingView.isHidden = !isLoading
-                
+                    
                 case .updateData:
                     self?.tableView.reloadData()
                 }
@@ -63,11 +92,12 @@ class HeroesViewController: UIViewController {
         }
     }
 }
+
 // MARK: Extension
 extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         heroesViewModel?.heroesCount ?? 0
-     }
+    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HeoreViewCell.height)
@@ -88,9 +118,11 @@ extension HeroesViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-       
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: Navegar a detalle
+        performSegue(withIdentifier: "Heroes_To_Detail", sender: indexPath.row)
     }
 }
+
+
 

@@ -14,5 +14,5 @@ struct Hero: Codable {
     let name: String?
     let description: String?
     let photo: String?
-    let favorite: Bool
+    let favorite: Bool?
 }

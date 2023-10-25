@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 // MARK: - Protocol
 protocol SplashViewStateDelegate {
     var viewState: ((SplashViewState) -> Void)? {get set}
@@ -31,6 +32,12 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         Observer()
         splashViewModel?.sendToObserver()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

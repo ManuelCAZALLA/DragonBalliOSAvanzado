@@ -29,4 +29,8 @@ class KeychainManager: KeychainManagerProtocol  {
     func getToken() -> String? {
         keychain.get(ApiKey.token)
     }
+    
+    func deleteToken() {
+        keychain.delete(ApiKey.token)
+    }
 }
