@@ -12,6 +12,7 @@ import KeychainSwift
 protocol KeychainManagerProtocol {
     func save(token: String)
     func getToken() -> String?
+    func deleteToken()
     
 }
 // MARK: Class

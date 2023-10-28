@@ -12,7 +12,7 @@ import Foundation
 class LoginViewModel: LoginViewControllerDelegate {
     var viewState: ((LoginView) -> Void)?
     var heroesViewModel: HeroesViewControllerDelegate {
-        HeroesViewModel(apiManager: apiManager, keychainManager: keychain)
+        HeroesViewModel(apiManager: apiManager, keychainManager: keychain, token: keychain.getToken()!)
     }
    //MARK: - Dependencies
     private let apiManager: ApiManagerProtocol

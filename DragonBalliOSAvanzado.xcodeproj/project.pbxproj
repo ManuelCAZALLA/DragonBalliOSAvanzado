@@ -15,6 +15,8 @@
 		3C1BF5642ADDA22D0039A6C3 /* keychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1BF5632ADDA22D0039A6C3 /* keychainManager.swift */; };
 		3C5EB3902AE82ED400C4BA0C /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EB38F2AE82ED400C4BA0C /* HeroLocation.swift */; };
 		3C5EB3932AE8485D00C4BA0C /* HeroMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EB3922AE8485D00C4BA0C /* HeroMap.swift */; };
+		3C7D46942AEAC44200990775 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D46932AEAC44200990775 /* CoreDataStack.swift */; };
+		3C7D46962AEACC6000990775 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D46952AEACC6000990775 /* CoreDataManager.swift */; };
 		3C8027102AE5349B002B1875 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C80270F2AE5349B002B1875 /* Splash.storyboard */; };
 		3C8027122AE534B3002B1875 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8027112AE534B3002B1875 /* SplashViewController.swift */; };
 		3C8027142AE534C9002B1875 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8027132AE534C9002B1875 /* SplashViewModel.swift */; };
@@ -64,6 +66,8 @@
 		3C1BF5632ADDA22D0039A6C3 /* keychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainManager.swift; sourceTree = "<group>"; };
 		3C5EB38F2AE82ED400C4BA0C /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		3C5EB3922AE8485D00C4BA0C /* HeroMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMap.swift; sourceTree = "<group>"; };
+		3C7D46932AEAC44200990775 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		3C7D46952AEACC6000990775 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		3C80270F2AE5349B002B1875 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		3C8027112AE534B3002B1875 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3C8027132AE534C9002B1875 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			children = (
 				3C05BAE72AE6F8D7007384DB /* Models */,
 				3C1BF5632ADDA22D0039A6C3 /* keychainManager.swift */,
+				3C7D46932AEAC44200990775 /* CoreDataStack.swift */,
+				3C7D46952AEACC6000990775 /* CoreDataManager.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -467,6 +473,7 @@
 				3CD1F4612AD697EF00C386D1 /* AppDelegate.swift in Sources */,
 				3CFAED962AE241E80075E15C /* HeoreViewCell.swift in Sources */,
 				3CFAED912AE235070075E15C /* HeroesViewModel.swift in Sources */,
+				3C7D46942AEAC44200990775 /* CoreDataStack.swift in Sources */,
 				3CFAED9C2AE2551C0075E15C /* Hero.swift in Sources */,
 				3C8027122AE534B3002B1875 /* SplashViewController.swift in Sources */,
 				3C05BAEE2AE6FA1B007384DB /* HeroesDetailViewController.swift in Sources */,
@@ -476,6 +483,7 @@
 				3C05BAE92AE6F90D007384DB /* HeroDao.swift in Sources */,
 				3CD1F4632AD697EF00C386D1 /* SceneDelegate.swift in Sources */,
 				3CD1F49C2AD6B42200C386D1 /* LoginViewModel.swift in Sources */,
+				3C7D46962AEACC6000990775 /* CoreDataManager.swift in Sources */,
 				3CD1F46B2AD697EF00C386D1 /* DragonBalliOSAvanzado.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

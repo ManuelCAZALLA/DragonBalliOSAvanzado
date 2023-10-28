@@ -22,7 +22,7 @@ class SplashViewModel: SplashViewStateDelegate {
     }()
     
     lazy var heroesViewModel: HeroesViewControllerDelegate = {
-        HeroesViewModel(apiManager: apiManager, keychainManager: keychain)
+        HeroesViewModel(apiManager: apiManager, keychainManager: keychain, token: keychain.getToken()!)
     }()
     
     private func hasToken() -> Bool {
@@ -37,9 +37,9 @@ class SplashViewModel: SplashViewStateDelegate {
     func sendToObserver() {
         viewState?(.loading(true))
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(3)) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) {
             if self.hasToken() {
-                self.viewState?(.toHeroes)
+              self.viewState?(.toHeroes)
             }else {
                 self.viewState?(.toLogin)
                 

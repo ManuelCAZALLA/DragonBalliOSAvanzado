@@ -40,7 +40,7 @@ class HeroesDetailViewController: UIViewController {
         initView()
         observer()
         heroesDetailViewModel?.sendToObserver()
-       }
+    }
     
    private func initView() {
        mapView.delegate = self

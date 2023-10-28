@@ -16,3 +16,13 @@ struct Hero: Codable {
     let photo: String?
     let favorite: Bool?
 }
+extension Hero {
+    init(heroDAO: HeroDAO) {
+        id = heroDAO.id
+        name = heroDAO.name
+        description = heroDAO.heroDescription
+        photo = heroDAO.photo
+        favorite = heroDAO.favorite
+    }
+}
+

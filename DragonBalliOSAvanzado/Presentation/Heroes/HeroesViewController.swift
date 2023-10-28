@@ -14,6 +14,7 @@ protocol HeroesViewControllerDelegate {
     var loginViewModel: LoginViewControllerDelegate { get }
     
     func sendToObserver()
+    func removeData()
     func findHero(index: Int) -> Hero?
     func heroesDetailViewModel(index: Int) -> HeroesDetailViewControllerDelegate?
 }
@@ -24,7 +25,6 @@ enum HeroesViewState {
 }
 // MARK: - CLASS
 class HeroesViewController: UIViewController {
-    let keychain = KeychainManager()
     
     // MARK: - IBOutlets
     @IBOutlet weak var loadingView: UIView!
@@ -32,14 +32,11 @@ class HeroesViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func exitButton(_ sender: Any) {
-        keychain.deleteToken()
+        heroesViewModel?.removeData()
         
         performSegue(withIdentifier: "Heroes_To_Login", sender: self)
     }
         
-        
-
-      
     // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
     
@@ -49,7 +46,6 @@ class HeroesViewController: UIViewController {
         observer()
         initView()
         heroesViewModel?.sendToObserver()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
