@@ -14,7 +14,7 @@ class LoginViewModel: LoginViewControllerDelegate {
     var heroesViewModel: HeroesViewControllerDelegate {
         HeroesViewModel(apiManager: apiManager, keychainManager: keychain, token: keychain.getToken()!)
     }
-   //MARK: - Dependencies
+    //MARK: - Dependencies
     private let apiManager: ApiManagerProtocol
     private let keychain: KeychainManagerProtocol
     
@@ -22,7 +22,7 @@ class LoginViewModel: LoginViewControllerDelegate {
     init( apiManager: ApiManagerProtocol, keychain: KeychainManagerProtocol) {
         self.apiManager = apiManager
         self.keychain = keychain
-}
+    }
     
     func loginActionButton(email: String?, password: String?) {
         self.viewState?(.loading(true))
@@ -43,7 +43,7 @@ class LoginViewModel: LoginViewControllerDelegate {
             self.logInWith(
                 email: email ?? "",
                 password: password ?? "")
-            }
+        }
     }
     
     // MARK: - Private func
@@ -65,12 +65,12 @@ class LoginViewModel: LoginViewControllerDelegate {
                 
             case .failure:
                 self.viewState?(.indicateErrorEmail("Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."))
-                }
             }
         }
     }
-    
-    
+}
+
+
 
 
 

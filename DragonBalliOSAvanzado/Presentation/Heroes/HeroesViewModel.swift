@@ -42,7 +42,6 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         
         if heroes.isEmpty {
             print("No hay super heroes en Core Data, cargando de la API")
-
             viewState?(.loading(true))
             
             DispatchQueue.global().async { [weak self] in
@@ -53,16 +52,13 @@ class HeroesViewModel: HeroesViewControllerDelegate {
                         self.viewState?(.loading(false))
                     }
                 }
-                                    
+                
                 self.apiManager.getHeroes(by: nil, token: self.token) { result in
                     
                     switch result {
                     case .success(let heroes):
-                        
                         self.heroes = heroes
-                        
                         let coreDataManager = CoreDataManager()
-                        
                         coreDataManager.deleteHeroes()
                         
                         for hero in heroes {

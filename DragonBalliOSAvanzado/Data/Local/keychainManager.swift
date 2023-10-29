@@ -9,7 +9,7 @@ import Foundation
 import KeychainSwift
 
 // MARK: Protocol
-protocol KeychainManagerProtocol {
+public protocol KeychainManagerProtocol {
     func save(token: String)
     func getToken() -> String?
     func deleteToken()

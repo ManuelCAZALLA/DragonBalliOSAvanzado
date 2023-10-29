@@ -7,15 +7,16 @@
 
 import Foundation
 
-enum ApiError: Error {
+public enum ApiError: Error {
     case unknow
     case encodingFailed
     case noData
     case malformedUrl
     case decodingFailed
 }
+
 // MARK: - Protocol
-protocol ApiManagerProtocol {
+public protocol ApiManagerProtocol {
     func login(user: String,
                password: String,
                completion:  ((Result<String, ApiError>) -> Void)?)
@@ -25,7 +26,7 @@ protocol ApiManagerProtocol {
     func getLocations(by idHero: String?, token: String, completion:((Result<HeroLocations, ApiError>) -> Void)?)
 }
 // MARK: Class
-class ApiManager: ApiManagerProtocol {
+public class ApiManager: ApiManagerProtocol {
    
     private enum ApiConfig {
         static let apiBaseURL = "https://dragonball.keepcoding.education/api"
@@ -36,7 +37,7 @@ class ApiManager: ApiManagerProtocol {
         static let locations = "/heros/locations"
     }
     
-    func login(user: String,
+    public func login(user: String,
                password: String,
                completion: ((Result<String, ApiError>) -> Void)?){
         
@@ -79,7 +80,7 @@ class ApiManager: ApiManagerProtocol {
         task.resume()
     }
     
-    func getHeroes(by name: String?, token: String, completion: ((Result<Heroes, ApiError>) -> Void)?){
+    public func getHeroes(by name: String?, token: String, completion: ((Result<Heroes, ApiError>) -> Void)?){
         guard let url = URL(string: "\(ApiConfig.apiBaseURL)\(EndPoint.heroes)") else {
             completion?(.failure(.malformedUrl))
             return
@@ -118,7 +119,7 @@ class ApiManager: ApiManagerProtocol {
             task.resume()
     }
     
-    func getLocations(by idHero: String?, token: String, completion:  ((Result<HeroLocations, ApiError>) -> Void)?) {
+    public func getLocations(by idHero: String?, token: String, completion:  ((Result<HeroLocations, ApiError>) -> Void)?) {
         guard let url = URL(string: "\(ApiConfig.apiBaseURL)\(EndPoint.locations)") else {
             completion?(.failure(.malformedUrl))
             return

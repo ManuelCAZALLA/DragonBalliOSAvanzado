@@ -8,10 +8,9 @@
 import UIKit
 import MapKit
 import Kingfisher
-
+// MARK: Protocol
 protocol HeroesDetailViewControllerDelegate {
     var viewState: ((HeroeDetailViewState) -> Void)? {get set }
-    
     func sendToObserver()
 }
 
@@ -20,21 +19,21 @@ enum HeroeDetailViewState {
     case update(hero: Hero?, locations: HeroLocations)
 }
 
-
+// MARK: Class
 class HeroesDetailViewController: UIViewController {
-   
+    // MARK: - IBOutlets
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var descriptionHero: UITextView!
     @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
-    
+    // MARK: - IBAction
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
     var heroesDetailViewModel: HeroesDetailViewControllerDelegate?
-    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
@@ -42,30 +41,27 @@ class HeroesDetailViewController: UIViewController {
         heroesDetailViewModel?.sendToObserver()
     }
     
-   private func initView() {
-       mapView.delegate = self
+    private func initView() {
+        mapView.delegate = self
     }
     
-   private func observer() {
-       heroesDetailViewModel?.viewState = { [weak self] state in
-           
-           DispatchQueue.main.async {
-               switch state {
-               case .loading(let isLoading):
-                   self?.loadingView.isHidden = !isLoading
-                   
-               case .update(let hero, let locations):
-                   self?.updateViews(
-                       hero: hero,
-                       heroLocations: locations)
-               }
-
-               }
-           }
-           
-          
-           }
-       
+    private func observer() {
+        heroesDetailViewModel?.viewState = { [weak self] state in
+            
+            DispatchQueue.main.async {
+                switch state {
+                case .loading(let isLoading):
+                    self?.loadingView.isHidden = !isLoading
+                    
+                case .update(let hero, let locations):
+                    self?.updateViews(
+                        hero: hero,
+                        heroLocations: locations)
+                }
+            }
+        }
+    }
+    // MARK: - Private Func
     private func updateViews(hero: Hero?, heroLocations: HeroLocations) {
         print("LLamando a updateView")
         imageHero.kf.setImage(with: URL(string: hero?.photo ?? ""))
@@ -75,11 +71,11 @@ class HeroesDetailViewController: UIViewController {
         
         heroLocations.forEach {
             mapView.addAnnotation(
-            HeroMap(
-                title: hero?.name,
-                info: hero?.id,
-                coordinate: .init(latitude: Double($0.latitud ?? "") ?? 0.0,
-                                  longitude: Double($0.longitud ?? "") ?? 0.0)))
+                HeroMap(
+                    title: hero?.name,
+                    info: hero?.id,
+                    coordinate: .init(latitude: Double($0.latitud ?? "") ?? 0.0,
+                                      longitude: Double($0.longitud ?? "") ?? 0.0)))
         }
     }
     
@@ -91,6 +87,7 @@ class HeroesDetailViewController: UIViewController {
         image.clipsToBounds = true
     }
 }
+// MARK: - Extension
 extension HeroesDetailViewController : MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

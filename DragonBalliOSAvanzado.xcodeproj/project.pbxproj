@@ -13,6 +13,7 @@
 		3C05BAF02AE6FA3A007384DB /* HeroesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C05BAEF2AE6FA3A007384DB /* HeroesDetailViewModel.swift */; };
 		3C1BF5612ADD3F5F0039A6C3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3C1BF5602ADD3F5F0039A6C3 /* KeychainSwift */; };
 		3C1BF5642ADDA22D0039A6C3 /* keychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1BF5632ADDA22D0039A6C3 /* keychainManager.swift */; };
+		3C2045672AEE436300CC0751 /* MockApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2045662AEE436300CC0751 /* MockApiManager.swift */; };
 		3C5EB3902AE82ED400C4BA0C /* HeroLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EB38F2AE82ED400C4BA0C /* HeroLocation.swift */; };
 		3C5EB3932AE8485D00C4BA0C /* HeroMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C5EB3922AE8485D00C4BA0C /* HeroMap.swift */; };
 		3C7D46942AEAC44200990775 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7D46932AEAC44200990775 /* CoreDataStack.swift */; };
@@ -20,6 +21,9 @@
 		3C8027102AE5349B002B1875 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C80270F2AE5349B002B1875 /* Splash.storyboard */; };
 		3C8027122AE534B3002B1875 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8027112AE534B3002B1875 /* SplashViewController.swift */; };
 		3C8027142AE534C9002B1875 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8027132AE534C9002B1875 /* SplashViewModel.swift */; };
+		3CBF4EBF2AEE6B7400F24587 /* keychainManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF4EBE2AEE6B7300F24587 /* keychainManagerTest.swift */; };
+		3CBF4EC12AEE755E00F24587 /* ApiManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF4EC02AEE755E00F24587 /* ApiManagerTest.swift */; };
+		3CBF4EC32AEE7B6800F24587 /* CoreDataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF4EC22AEE7B6800F24587 /* CoreDataManagerTest.swift */; };
 		3CD1F4612AD697EF00C386D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4602AD697EF00C386D1 /* AppDelegate.swift */; };
 		3CD1F4632AD697EF00C386D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4622AD697EF00C386D1 /* SceneDelegate.swift */; };
 		3CD1F4652AD697EF00C386D1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD1F4642AD697EF00C386D1 /* LoginViewController.swift */; };
@@ -64,6 +68,7 @@
 		3C05BAED2AE6FA1B007384DB /* HeroesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailViewController.swift; sourceTree = "<group>"; };
 		3C05BAEF2AE6FA3A007384DB /* HeroesDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesDetailViewModel.swift; sourceTree = "<group>"; };
 		3C1BF5632ADDA22D0039A6C3 /* keychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainManager.swift; sourceTree = "<group>"; };
+		3C2045662AEE436300CC0751 /* MockApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiManager.swift; sourceTree = "<group>"; };
 		3C5EB38F2AE82ED400C4BA0C /* HeroLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroLocation.swift; sourceTree = "<group>"; };
 		3C5EB3922AE8485D00C4BA0C /* HeroMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroMap.swift; sourceTree = "<group>"; };
 		3C7D46932AEAC44200990775 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -71,6 +76,9 @@
 		3C80270F2AE5349B002B1875 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		3C8027112AE534B3002B1875 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		3C8027132AE534C9002B1875 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		3CBF4EBE2AEE6B7300F24587 /* keychainManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keychainManagerTest.swift; sourceTree = "<group>"; };
+		3CBF4EC02AEE755E00F24587 /* ApiManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManagerTest.swift; sourceTree = "<group>"; };
+		3CBF4EC22AEE7B6800F24587 /* CoreDataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTest.swift; sourceTree = "<group>"; };
 		3CD1F45D2AD697EF00C386D1 /* DragonBalliOSAvanzado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DragonBalliOSAvanzado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD1F4602AD697EF00C386D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CD1F4622AD697EF00C386D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +149,17 @@
 			path = HeroesDetail;
 			sourceTree = "<group>";
 		};
+		3C2045652AEE425B00CC0751 /* MockApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				3C2045662AEE436300CC0751 /* MockApiManager.swift */,
+				3CBF4EBE2AEE6B7300F24587 /* keychainManagerTest.swift */,
+				3CBF4EC02AEE755E00F24587 /* ApiManagerTest.swift */,
+				3CBF4EC22AEE7B6800F24587 /* CoreDataManagerTest.swift */,
+			);
+			path = MockApiManager;
+			sourceTree = "<group>";
+		};
 		3C24D1762AD7F9B100C81D68 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +224,7 @@
 		3CD1F4792AD697F100C386D1 /* DragonBalliOSAvanzadoTests */ = {
 			isa = PBXGroup;
 			children = (
+				3C2045652AEE425B00CC0751 /* MockApiManager */,
 				3CD1F47A2AD697F100C386D1 /* DragonBalliOSAvanzadoTests.swift */,
 			);
 			path = DragonBalliOSAvanzadoTests;
@@ -492,7 +512,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CBF4EC32AEE7B6800F24587 /* CoreDataManagerTest.swift in Sources */,
+				3CBF4EC12AEE755E00F24587 /* ApiManagerTest.swift in Sources */,
+				3C2045672AEE436300CC0751 /* MockApiManager.swift in Sources */,
 				3CD1F47B2AD697F100C386D1 /* DragonBalliOSAvanzadoTests.swift in Sources */,
+				3CBF4EBF2AEE6B7400F24587 /* keychainManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

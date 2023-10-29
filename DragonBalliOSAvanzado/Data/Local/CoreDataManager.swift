@@ -10,7 +10,7 @@ import CoreData
 
 class CoreDataManager {
     
-    private var moc: NSManagedObjectContext {
+    public var moc: NSManagedObjectContext {
         CoreDataStack.shared.persistentContainer.viewContext
     }
     
@@ -29,16 +29,16 @@ class CoreDataManager {
         }
         return heroes.map { heroDao in
             Hero(heroDAO: heroDao)}
-        }
-
-       func deleteHeroes() {
+    }
+    
+    func deleteHeroes() {
         let fetchHero = NSFetchRequest<HeroDAO>(entityName: "HeroDAO")
         
         let heroes = try? moc.fetch(fetchHero)
         heroes?.forEach {moc.delete($0)}
         try? moc.save() }
-     }
-        
+}
+
 
 
 

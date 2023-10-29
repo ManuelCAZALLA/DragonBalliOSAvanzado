@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+// MARK: - Class
 class HeroesDetailViewModel: HeroesDetailViewControllerDelegate {
     private let apiManager: ApiManagerProtocol
     private let keychain: KeychainManagerProtocol
@@ -44,7 +44,7 @@ class HeroesDetailViewModel: HeroesDetailViewControllerDelegate {
                     case .failure(let error):
                         print("\(error)")
                     }
-            }
+                }
         }
     }
 }

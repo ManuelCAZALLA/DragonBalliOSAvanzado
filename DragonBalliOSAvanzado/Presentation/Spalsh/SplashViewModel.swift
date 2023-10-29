@@ -39,7 +39,7 @@ class SplashViewModel: SplashViewStateDelegate {
         
         DispatchQueue.global().asyncAfter(deadline: .now() + .seconds(2)) {
             if self.hasToken() {
-              self.viewState?(.toHeroes)
+                self.viewState?(.toHeroes)
             }else {
                 self.viewState?(.toLogin)
                 

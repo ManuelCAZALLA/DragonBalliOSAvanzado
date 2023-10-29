@@ -7,14 +7,14 @@
 
 import Foundation
 
-typealias Heroes = [Hero]
+public typealias Heroes = [Hero]
 
-struct Hero: Codable {
-    let id: String?
-    let name: String?
-    let description: String?
-    let photo: String?
-    let favorite: Bool?
+public struct Hero: Codable {
+   public let id: String?
+   public let name: String?
+   public let description: String?
+   public let photo: String?
+   public let favorite: Bool?
 }
 extension Hero {
     init(heroDAO: HeroDAO) {

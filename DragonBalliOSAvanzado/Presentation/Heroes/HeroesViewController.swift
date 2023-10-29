@@ -36,7 +36,7 @@ class HeroesViewController: UIViewController {
         
         performSegue(withIdentifier: "Heroes_To_Login", sender: self)
     }
-        
+    
     // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
     
@@ -61,7 +61,6 @@ class HeroesViewController: UIViewController {
             }
         }
     }
-
     
     // MARK: - Private Func
     private func initView() {

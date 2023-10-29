@@ -7,12 +7,12 @@
 
 import Foundation
 
-typealias HeroLocations = [HeroLocation]
+public typealias HeroLocations = [HeroLocation]
 
-struct HeroLocation: Codable {
-    let id: String?
-    let latitud: String?
-    let longitud: String?
-    let dateShow: String?
-    let hero: Hero?
+public struct HeroLocation: Codable {
+   public let id: String?
+   public let latitud: String?
+   public let longitud: String?
+   public let dateShow: String?
+   public let hero: Hero?
 }
