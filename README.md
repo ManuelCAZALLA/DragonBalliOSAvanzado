@@ -1,4 +1,4 @@
-# Dragon Ball Explorer App
+# Dragon Ball App
 Esta aplicación de Dragon Ball te permite explorar información detallada sobre personajes, incluyendo sus descripciones y localizaciones. Utiliza diversas tecnologías como Swift, UIKit, CoreData, MapKit y Keychain.
 
 - Características
