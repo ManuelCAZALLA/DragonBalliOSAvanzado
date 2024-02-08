@@ -43,6 +43,7 @@
 		3CFAED962AE241E80075E15C /* HeoreViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED952AE241E80075E15C /* HeoreViewCell.swift */; };
 		3CFAED982AE249A80075E15C /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CFAED972AE249A80075E15C /* Cell.xib */; };
 		3CFAED9C2AE2551C0075E15C /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAED9B2AE2551C0075E15C /* Hero.swift */; };
+		3CFEC7B72B74F62C0057F138 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEC7B62B74F62C0057F138 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		3CFAED952AE241E80075E15C /* HeoreViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeoreViewCell.swift; sourceTree = "<group>"; };
 		3CFAED972AE249A80075E15C /* Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
 		3CFAED9B2AE2551C0075E15C /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		3CFEC7B62B74F62C0057F138 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 		3CD1F45F2AD697EF00C386D1 /* DragonBalliOSAvanzado */ = {
 			isa = PBXGroup;
 			children = (
+				3CFEC7B52B74F6110057F138 /* Costants */,
 				3CFAED992AE254FA0075E15C /* Domain */,
 				3CD1F4992AD6B3E200C386D1 /* Presentation */,
 				3CD1F4712AD697F000C386D1 /* Info.plist */,
@@ -340,6 +343,14 @@
 				3C5EB38F2AE82ED400C4BA0C /* HeroLocation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3CFEC7B52B74F6110057F138 /* Costants */ = {
+			isa = PBXGroup;
+			children = (
+				3CFEC7B62B74F62C0057F138 /* Constant.swift */,
+			);
+			path = Costants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 				3C05BAEE2AE6FA1B007384DB /* HeroesDetailViewController.swift in Sources */,
 				3C8027142AE534C9002B1875 /* SplashViewModel.swift in Sources */,
 				3C5EB3932AE8485D00C4BA0C /* HeroMap.swift in Sources */,
+				3CFEC7B72B74F62C0057F138 /* Constant.swift in Sources */,
 				3CD3AEE82ADE450A001F444A /* ApiManager.swift in Sources */,
 				3C05BAE92AE6F90D007384DB /* HeroDao.swift in Sources */,
 				3CD1F4632AD697EF00C386D1 /* SceneDelegate.swift in Sources */,

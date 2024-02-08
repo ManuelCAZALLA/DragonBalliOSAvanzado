@@ -31,13 +31,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailError: UILabel!
     @IBOutlet weak var loadingView: UIView!
     
-    // MARK: - IBaction
-    @IBAction func loginButton(_ sender: Any) {
-        loginViewModel?.loginActionButton(
-            email: email.text,
-            password: password.text)
-    }
-    
+   
     var loginViewModel: LoginViewControllerDelegate?
     
     // MARK: Lifecycle
@@ -92,6 +86,12 @@ class LoginViewController: UIViewController{
                 }
             }
         }
+    }
+    // MARK: - IBaction
+    @IBAction func loginButton(_ sender: Any) {
+        loginViewModel?.loginActionButton(
+            email: email.text,
+            password: password.text)
     }
     
 }

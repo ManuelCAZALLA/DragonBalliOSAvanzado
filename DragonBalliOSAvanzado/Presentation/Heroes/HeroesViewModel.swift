@@ -24,7 +24,6 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         heroes.count
     }
     private var token: String
-    
     private var heroes: Heroes = []
     
     // MARK: Inits

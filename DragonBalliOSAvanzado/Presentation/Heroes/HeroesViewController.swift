@@ -30,14 +30,7 @@ class HeroesViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-    // MARK: IBActions
-    @IBAction func exitButton(_ sender: Any) {
-        heroesViewModel?.removeData()
-        
-        performSegue(withIdentifier: "Heroes_To_Login", sender: self)
-    }
-    
-    // MARK: Public Properties
+   // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
     
     // MARK: - Lifecicle
@@ -85,6 +78,12 @@ class HeroesViewController: UIViewController {
                 }
             }
         }
+    }
+    // MARK: IBActions
+    @IBAction func exitButton(_ sender: Any) {
+        heroesViewModel?.removeData()
+        
+        performSegue(withIdentifier: "Heroes_To_Login", sender: self)
     }
 }
 

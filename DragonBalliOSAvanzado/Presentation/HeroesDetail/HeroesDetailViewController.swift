@@ -27,10 +27,7 @@ class HeroesDetailViewController: UIViewController {
     @IBOutlet weak var nameHero: UILabel!
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
-    // MARK: - IBAction
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+    
     
     var heroesDetailViewModel: HeroesDetailViewControllerDelegate?
     // MARK: Lifecycle
@@ -85,6 +82,11 @@ class HeroesDetailViewController: UIViewController {
         image.layer.cornerRadius = image.frame.height / 2
         image.layer.masksToBounds = false
         image.clipsToBounds = true
+    }
+    
+    // MARK: - IBAction
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
 // MARK: - Extension

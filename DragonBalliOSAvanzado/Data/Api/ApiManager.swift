@@ -7,14 +7,6 @@
 
 import Foundation
 
-public enum ApiError: Error {
-    case unknow
-    case encodingFailed
-    case noData
-    case malformedUrl
-    case decodingFailed
-}
-
 // MARK: - Protocol
 public protocol ApiManagerProtocol {
     func login(user: String,
@@ -27,19 +19,10 @@ public protocol ApiManagerProtocol {
 }
 // MARK: Class
 public class ApiManager: ApiManagerProtocol {
-   
-    private enum ApiConfig {
-        static let apiBaseURL = "https://dragonball.keepcoding.education/api"
-    }
-    enum EndPoint {
-        static let login = "/auth/login"
-        static let heroes = "/heros/all"
-        static let locations = "/heros/locations"
-    }
     
     public func login(user: String,
-               password: String,
-               completion: ((Result<String, ApiError>) -> Void)?){
+                      password: String,
+                      completion: ((Result<String, ApiError>) -> Void)?){
         
         guard let url = URL(string: "\(ApiConfig.apiBaseURL)\(EndPoint.login)") else {
             completion?(.failure(.malformedUrl))
@@ -75,7 +58,7 @@ public class ApiManager: ApiManagerProtocol {
                 return
                 
             }
-          completion?(.success(token))
+            completion?(.success(token))
         }
         task.resume()
     }
@@ -88,7 +71,7 @@ public class ApiManager: ApiManagerProtocol {
         
         let jsonData: [String: Any] = ["name": name ?? ""]
         let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json; charset=utf-8",
@@ -96,27 +79,27 @@ public class ApiManager: ApiManagerProtocol {
         urlRequest.setValue("Bearer \(token)",
                             forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = jsonParameters
-
-       let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-               completion?(.failure(.unknow))
+                completion?(.failure(.unknow))
                 return
             }
-
+            
             guard let data,
                   (response as? HTTPURLResponse)?.statusCode == 200 else {
-               completion?(.failure(.noData))
+                completion?(.failure(.noData))
                 return
             }
-
+            
             guard let heroes = try? JSONDecoder().decode(Heroes.self, from: data) else {
                 completion?(.failure(.decodingFailed))
                 return
             }
-
-           completion?(.success(heroes))
+            
+            completion?(.success(heroes))
         }
-            task.resume()
+        task.resume()
     }
     
     public func getLocations(by idHero: String?, token: String, completion:  ((Result<HeroLocations, ApiError>) -> Void)?) {
@@ -127,7 +110,7 @@ public class ApiManager: ApiManagerProtocol {
         
         let jsonData: [String: Any] = ["id": idHero ?? ""]
         let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
-
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json; charset=utf-8",
@@ -135,31 +118,31 @@ public class ApiManager: ApiManagerProtocol {
         urlRequest.setValue("Bearer \(token)",
                             forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = jsonParameters
-
-       let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-               completion?(.failure(.unknow))
+                completion?(.failure(.unknow))
                 return
             }
-
+            
             guard let data,
                   (response as? HTTPURLResponse)?.statusCode == 200 else {
-               completion?(.failure(.noData))
-               return
+                completion?(.failure(.noData))
+                return
             }
-
+            
             guard let heroesLocation = try? JSONDecoder().decode(HeroLocations.self, from: data) else {
                 print("Error heroesLocations ")
                 completion?(.failure(.decodingFailed))
                 return
             }
-           print("API RESPONSE - GET HEROES: \(heroesLocation)")
+            print("API RESPONSE - GET HEROES: \(heroesLocation)")
             completion?(.success(heroesLocation))
         }
-            task.resume()
+        task.resume()
     }
 }
 
-    
-    
+
+
 
