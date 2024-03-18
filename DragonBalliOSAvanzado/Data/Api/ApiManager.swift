@@ -9,12 +9,15 @@ import Foundation
 
 // MARK: - Protocol
 public protocol ApiManagerProtocol {
+    
     func login(user: String,
                password: String,
                completion:  ((Result<String, ApiError>) -> Void)?)
+    
     func getHeroes(by name: String?,
                    token: String,
                    completion:((Result<Heroes, ApiError>) -> Void)?)
+    
     func getLocations(by idHero: String?, token: String, completion:((Result<HeroLocations, ApiError>) -> Void)?)
 }
 // MARK: Class
