@@ -30,7 +30,7 @@ class HeroesViewController: UIViewController {
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
     
-   // MARK: Public Properties
+    // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
     
     // MARK: - Lifecicle

@@ -98,7 +98,5 @@ class HeroesViewModel: HeroesViewControllerDelegate {
             keychain: keychainManager,
             hero: selecHero))
     }
-    
-    
 }
 
