@@ -64,7 +64,7 @@ class LoginViewModel: LoginViewControllerDelegate {
                 self.viewState?(.nextScreen)
                 
             case .failure:
-                self.viewState?(.indicateErrorEmail("Ocurrió un error durante el inicio de sesión. Por favor, inténtalo de nuevo."))
+                self.viewState?(.indicateErrorEmail("Ocurrió un error durante el inicio de sesión. Por favor, inténtelo de nuevo."))
             }
         }
     }

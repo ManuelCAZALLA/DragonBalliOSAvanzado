@@ -31,7 +31,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailError: UILabel!
     @IBOutlet weak var loadingView: UIView!
     
-   
+    
     var loginViewModel: LoginViewControllerDelegate?
     
     // MARK: Lifecycle
@@ -93,7 +93,6 @@ class LoginViewController: UIViewController{
             email: email.text,
             password: password.text)
     }
-    
 }
 
 extension LoginViewController: UITextFieldDelegate {

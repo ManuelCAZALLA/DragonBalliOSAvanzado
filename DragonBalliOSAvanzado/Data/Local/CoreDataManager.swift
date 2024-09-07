@@ -15,7 +15,7 @@ class CoreDataManager {
     }
     
     func saveHero(hero: Hero) {
-        let heroToSave = HeroDAO(hero: hero, context: moc)
+        _ = HeroDAO(hero: hero, context: moc)
         try? moc.save()
         
     }
