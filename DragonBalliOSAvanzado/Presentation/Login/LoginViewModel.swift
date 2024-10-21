@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // MARK: - Class
 class LoginViewModel: LoginViewControllerDelegate {
     var viewState: ((LoginView) -> Void)?
@@ -68,7 +67,6 @@ class LoginViewModel: LoginViewControllerDelegate {
             }
         }
     }
-    
 }
 
 
