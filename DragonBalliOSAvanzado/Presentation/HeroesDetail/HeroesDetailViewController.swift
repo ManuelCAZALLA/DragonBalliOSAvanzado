@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import Kingfisher
 // MARK: Protocol
+
 protocol HeroesDetailViewControllerDelegate {
     var viewState: ((HeroeDetailViewState) -> Void)? {get set }
     func sendToObserver()
