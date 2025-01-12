@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 // MARK: - Class
 class HeroesDetailViewModel: HeroesDetailViewControllerDelegate {
     private let apiManager: ApiManagerProtocol

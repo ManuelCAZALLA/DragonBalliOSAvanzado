@@ -31,16 +31,14 @@ class HeroesViewModel: HeroesViewControllerDelegate {
         self.apiManager = apiManager
         self.keychainManager = keychainManager
         self.token = token
-        
     }
     
     // MARK: Public Function
     func sendToObserver() {
-        print("Cargando superherores de Core Data")
         self.heroes = coreDataManager.loadHeros()
         
         if heroes.isEmpty {
-            print("No hay super heroes en Core Data, cargando de la API")
+            
             viewState?(.loading(true))
             
             DispatchQueue.global().async { [weak self] in

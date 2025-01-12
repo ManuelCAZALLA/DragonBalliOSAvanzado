@@ -7,9 +7,6 @@
 
 import Foundation
 
-// MARK: - Protocol
-
-
 // MARK: - Class
 class SplashViewModel: SplashViewStateDelegate {
     private let apiManager: ApiManagerProtocol
