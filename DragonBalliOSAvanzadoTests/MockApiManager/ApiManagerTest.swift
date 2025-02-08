@@ -2,7 +2,7 @@
 //  ApiManagerTest.swift
 //  DragonBalliOSAvanzadoTests
 //
-//  Created by Manuel Cazalla Colmenero on 29/10/23.
+//  Created by Manuel Cazalla Colmenero on 29/10/24.
 //
 
 import XCTest
@@ -19,7 +19,6 @@ class ApiManagerTest: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-    
     
     func testLogin() {
         let expectation = XCTestExpectation(description: "Login completion ")

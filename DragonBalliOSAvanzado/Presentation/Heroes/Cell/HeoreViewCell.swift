@@ -2,7 +2,7 @@
 //  HeoreViewCell.swift
 //  DragonBalliOSAvanzado
 //
-//  Created by Manuel Cazalla Colmenero on 20/10/23.
+//  Created by Manuel Cazalla Colmenero on 20/10/24.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class HeoreViewCell: UITableViewCell {
         imageHero.layer.cornerRadius = 8
         imageHero.layer.maskedCorners = [.layerMinXMaxYCorner]
         
-        selectionStyle = .none // No hacer efecto seleccionado de celda
+        selectionStyle = .none 
     }
     
     func updateView(

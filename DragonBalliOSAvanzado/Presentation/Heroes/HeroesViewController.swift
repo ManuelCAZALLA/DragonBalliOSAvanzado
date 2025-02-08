@@ -2,7 +2,7 @@
 //  HeroesViewController.swift
 //  DragonBalliOSAvanzado
 //
-//  Created by Manuel Cazalla Colmenero on 20/10/23.
+//  Created by Manuel Cazalla Colmenero on 20/10/24.
 //
 
 import UIKit
@@ -29,6 +29,13 @@ class HeroesViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: IBActions
+    @IBAction func exitButton(_ sender: Any) {
+        heroesViewModel?.removeData()
+        
+        performSegue(withIdentifier: "Heroes_To_Login", sender: self)
+    }
     
     // MARK: Public Properties
     var heroesViewModel: HeroesViewControllerDelegate?
@@ -78,12 +85,6 @@ class HeroesViewController: UIViewController {
                 }
             }
         }
-    }
-    // MARK: IBActions
-    @IBAction func exitButton(_ sender: Any) {
-        heroesViewModel?.removeData()
-        
-        performSegue(withIdentifier: "Heroes_To_Login", sender: self)
     }
 }
 

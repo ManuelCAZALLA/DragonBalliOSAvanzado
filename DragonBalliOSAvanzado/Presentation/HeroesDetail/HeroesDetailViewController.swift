@@ -2,7 +2,7 @@
 //  HeroesDetailViewController.swift
 //  DragonBalliOSAvanzado
 //
-//  Created by Manuel Cazalla Colmenero on 23/10/23.
+//  Created by Manuel Cazalla Colmenero on 23/10/24.
 //
 
 import UIKit
@@ -29,6 +29,11 @@ class HeroesDetailViewController: UIViewController {
     @IBOutlet weak var imageHero: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
     
+    
+    // MARK: - IBAction
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
     var heroesDetailViewModel: HeroesDetailViewControllerDelegate?
     // MARK: Lifecycle
@@ -85,10 +90,6 @@ class HeroesDetailViewController: UIViewController {
         image.clipsToBounds = true
     }
     
-    // MARK: - IBAction
-    @IBAction func backButton(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
 }
 // MARK: - Extension
 extension HeroesDetailViewController : MKMapViewDelegate {

@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  DragonBalliOSAvanzado
 //
-//  Created by Manuel Cazalla Colmenero on 11/10/23.
+//  Created by Manuel Cazalla Colmenero on 11/10/24.
 //
 
 import UIKit
@@ -31,6 +31,12 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var emailError: UILabel!
     @IBOutlet weak var loadingView: UIView!
     
+    // MARK: - IBaction
+    @IBAction func loginButton(_ sender: Any) {
+        loginViewModel?.loginActionButton(
+            email: email.text,
+            password: password.text)
+    }
     
     var loginViewModel: LoginViewControllerDelegate?
     
@@ -62,8 +68,8 @@ class LoginViewController: UIViewController{
         )
     }
     
-    @objc func dismisskeyboard() { // esta funcion es para el selector
-        view.endEditing(true) // Oculta el teclado
+    @objc func dismisskeyboard() {
+        view.endEditing(true)
     }
     
     private func observer() {
@@ -87,12 +93,7 @@ class LoginViewController: UIViewController{
             }
         }
     }
-    // MARK: - IBaction
-    @IBAction func loginButton(_ sender: Any) {
-        loginViewModel?.loginActionButton(
-            email: email.text,
-            password: password.text)
-    }
+  
 }
 
 extension LoginViewController: UITextFieldDelegate {

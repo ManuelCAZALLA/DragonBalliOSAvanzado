@@ -2,7 +2,7 @@
 //  CoreDataManagerTest.swift
 //  DragonBalliOSAvanzadoTests
 //
-//  Created by Manuel Cazalla Colmenero on 29/10/23.
+//  Created by Manuel Cazalla Colmenero on 29/10/24.
 //
 
 import XCTest
@@ -19,12 +19,11 @@ class CoreDataManagerTest: XCTestCase {
         moc = coreDataManager.moc
     }
     
-    
     override func tearDown() {
         coreDataManager.deleteHeroes()
         coreDataManager = nil
         super.tearDown()
-       
+        
     }
     func testSaveHero() {
         let heroToSave = Hero(id: "1", name: "Goku", description: "Powerful Saiyan", photo: "goku.jpg", favorite: false)
@@ -41,25 +40,23 @@ class CoreDataManagerTest: XCTestCase {
         coreDataManager.saveHero(hero: hero1)
         coreDataManager.saveHero(hero: hero2)
         
-       let loadedHeroes = coreDataManager.loadHeros()
+        let loadedHeroes = coreDataManager.loadHeros()
         
         XCTAssertEqual(loadedHeroes.count, 2)
         XCTAssertTrue(loadedHeroes.contains { $0.id == hero1.id })
         XCTAssertTrue(loadedHeroes.contains { $0.id == hero2.id })
     }
-
+    
     func testDeleteHeroes() {
-            let hero = Hero(id: "2", name: "Vegeta", description: "Prince of Saiyans", photo: "vegeta.jpg", favorite: false)
-            coreDataManager.saveHero(hero: hero)
-            
-            coreDataManager.deleteHeroes()
-            let savedHeroes = coreDataManager.loadHeros()
-            XCTAssertEqual(savedHeroes.count, 0)
-        }
+        let hero = Hero(id: "2", name: "Vegeta", description: "Prince of Saiyans", photo: "vegeta.jpg", favorite: false)
+        coreDataManager.saveHero(hero: hero)
         
-        
+        coreDataManager.deleteHeroes()
+        let savedHeroes = coreDataManager.loadHeros()
+        XCTAssertEqual(savedHeroes.count, 0)
     }
-   
+}
+
 
 
 

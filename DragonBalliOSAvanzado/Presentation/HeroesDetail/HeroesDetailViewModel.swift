@@ -2,7 +2,7 @@
 //  HeroesDetaisViewModel.swift
 //  DragonBalliOSAvanzado
 //
-//  Created by Manuel Cazalla Colmenero on 23/10/23.
+//  Created by Manuel Cazalla Colmenero on 23/10/24.
 //
 
 import Foundation
